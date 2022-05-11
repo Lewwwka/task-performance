@@ -6,10 +6,6 @@
     position: relative;
 }
 
-.contact {
-    scroll-snap-align: start;
-}
-
 .stickyHeader {
     position: sticky;
     top: 0;

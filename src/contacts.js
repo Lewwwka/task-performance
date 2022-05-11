@@ -11,16 +11,11 @@ function addContacts() {
   }
   contacts.appendChild(fragment);
 }
-
 contacts.addEventListener("scroll", (e) => {
-  const items = Array.from(contacts.getElementsByClassName("contact"));
-  const itemOffsets = items.map((item) => item.offsetTop);
-  const topItemIndex = itemOffsets.findIndex(
-    (offset) => contacts.scrollTop - offset <= -18
+  const topContact = contacts.getElementsByClassName("contact")[0];
+  stickyHeader.textContent = Math.round(
+    contacts.scrollTop / topContact.offsetTop
   );
-  if (topItemIndex !== -1) {
-    stickyHeader.textContent = items[topItemIndex].textContent;
-  }
 });
 
 addContacts();
